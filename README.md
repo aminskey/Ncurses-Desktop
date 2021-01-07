@@ -15,26 +15,26 @@ Some programs in the CWorkspace repo rely on the libraries in this repo.
 There is a program in the CWorkspace, that has a very nice GUI for installing this desktop.    
 But first we have to build it, and the rest of the cworkspace.    
 
-**Run make all**:    
-Username@Computer> _pwd_    
-/home/UsrName/cworkspace    
-Username@Computer> _make all_    
-...    
-.    
-.
-.
-.
-.
-.    
+	**Run make all**:    
+	Username@Computer> _pwd_    
+	/home/UsrName/cworkspace    
+	Username@Computer> _make all_    
+	...    
+	.    
+	.
+	.
+	.
+	.
+	.    
 
 
-After that put bin in your src path.
+_After that put bin in your src path._    
 **.bashrc or .bash_profile**:    
-Username@Computer> _pwd_    
-/home/Usrname    
-Username@Computer> _nano .bashrc_    
+	Username@Computer> _pwd_    
+	/home/Usrname    
+	Username@Computer> _nano .bashrc_    
 And Enter    
-export PATH=/home/Usrname/bin:$PATH    
+	export PATH=/home/Usrname/bin:$PATH    
 After that source it    
     
 Username@Computer> _source ~/.bashrc_   
@@ -43,7 +43,7 @@ After that restart your terminal
 
 ## Now Time to setup your System
 **Run setup**:    
-Username@Computer> _setup_    
+	Username@Computer> _setup_    
 You'll have to answer a few questions.   
 Here are the background numbers:    
 
@@ -58,11 +58,11 @@ Here are the background numbers:
 When you're Done setting up your system.    
 Replace the Username/cworkspace/MzDesk/libfuncs/drvConf.c file with the new one in your new fs.
 
-**Like This**:    
-Username@Computer> _mv .newfs/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c_    
+	**Like This**:    
+	Username@Computer> _mv .newfs/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c_    
 
-**After that build the system again**:    
-Username@Computer> _pwd_    
-/home/Username/cworkspace    
-Username@Computer> _make setup BOXEmu desk_   
+	**After that build the system again**:    
+	Username@Computer> _pwd_    
+	/home/Username/cworkspace    
+	Username@Computer> _make setup BOXEmu desk_   
 ### Now Your done congrats
