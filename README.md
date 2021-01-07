@@ -47,7 +47,9 @@ After that restart your terminal
 
 ## Now Time to setup your System
 **Run setup**:    
+
 	Username@Computer> setup    
+
 You'll have to answer a few questions.   
 Here are the background numbers:    
 
@@ -63,12 +65,15 @@ When you're Done setting up your system.
 Replace the Username/cworkspace/MzDesk/libfuncs/drvConf.c file with the new one in your new fs.
 
 **Like This**:    
+
 	Username@Computer> mv .newfs/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c    
 
 **After that build the system again**:    
+
 	Username@Computer> pwd    
 	/home/Username/cworkspace    
 	Username@Computer> make setup BOXEmu desk   
+
 ### Now Your done congrats
 **Just Run**
 
