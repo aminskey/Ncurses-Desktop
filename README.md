@@ -16,9 +16,9 @@ There is a program in the CWorkspace, that has a very nice GUI for installing th
 But first we have to build it, and the rest of the cworkspace.    
 
 	**Run make all**:    
-	Username@Computer> _pwd_    
+	Username@Computer> pwd    
 	/home/UsrName/cworkspace    
-	Username@Computer> _make all_    
+	Username@Computer> make all    
 	...    
 	.    
 	.
@@ -30,20 +30,20 @@ But first we have to build it, and the rest of the cworkspace.
 
 _After that put bin in your src path._    
 **.bashrc or .bash_profile**:    
-	Username@Computer> _pwd_    
+	Username@Computer> pwd    
 	/home/Usrname    
-	Username@Computer> _nano .bashrc_    
+	Username@Computer> nano .bashrc    
 And Enter    
 	export PATH=/home/Usrname/bin:$PATH    
 After that source it    
     
-Username@Computer> _source ~/.bashrc_   
+	Username@Computer> source ~/.bashrc   
 
 After that restart your terminal    
 
 ## Now Time to setup your System
 **Run setup**:    
-	Username@Computer> _setup_    
+	Username@Computer> setup    
 You'll have to answer a few questions.   
 Here are the background numbers:    
 
@@ -58,11 +58,16 @@ Here are the background numbers:
 When you're Done setting up your system.    
 Replace the Username/cworkspace/MzDesk/libfuncs/drvConf.c file with the new one in your new fs.
 
-	**Like This**:    
-	Username@Computer> _mv .newfs/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c_    
+**Like This**:    
+	Username@Computer> mv .newfs/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c    
 
-	**After that build the system again**:    
-	Username@Computer> _pwd_    
+**After that build the system again**:    
+	Username@Computer> pwd    
 	/home/Username/cworkspace    
-	Username@Computer> _make setup BOXEmu desk_   
+	Username@Computer> make setup BOXEmu desk   
 ### Now Your done congrats
+**Just Run**
+	Username@Computer> AcornDesk    
+	or even    
+	Username@Computer> AcornDos    
+	
