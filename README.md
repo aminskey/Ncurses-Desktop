@@ -30,11 +30,15 @@ But first we have to build it, and the rest of the cworkspace.
 
 _After that put bin in your src path._    
 **.bashrc or .bash_profile**:    
+
 	Username@Computer> pwd    
 	/home/Usrname    
 	Username@Computer> nano .bashrc    
+
 And Enter    
+
 	export PATH=/home/Usrname/bin:$PATH    
+
 After that source it    
     
 	Username@Computer> source ~/.bashrc   
