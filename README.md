@@ -62,7 +62,7 @@ Here are the background numbers:
         COLOR_CYAN    6    
         COLOR_WHITE   7    
 When you're Done setting up your system.    
-Replace the Username/cworkspace/MzDesk/libfuncs/drvConf.c file with the new one in your new fs.
+Replace the **_Username/cworkspace/MzDesk/libfuncs/drvConf.c_** file with the new one in your new fs.
 
 **Like This**:    
 
