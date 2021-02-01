@@ -248,7 +248,7 @@ int main(void){
 		}
 		if(res==1){
 			wclear(trm);
-			wpaint(trm,32,3);
+			wpaint(trm,32,4);
 
 			box(trm,0,0);
 			wrefresh(trm);

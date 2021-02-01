@@ -51,7 +51,7 @@ After that restart your terminal
 	Username@Computer> setup    
 
 You'll have to answer a few questions.   
-Here are the background numbers:    
+Here are the background and forground numbers:    
 
         COLOR_BLACK   0    
         COLOR_RED     1    

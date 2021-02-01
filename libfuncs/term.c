@@ -330,7 +330,6 @@ int term(WINDOW *wterm, char *username){
                                 }else{
                                         ln=f;
                                 }
-                                continue;
                         }
                         sprintf(str,"%s/%s.txt",drvz,arg1);
                         int f=more(iterm,str,ln);
