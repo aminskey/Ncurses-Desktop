@@ -66,7 +66,7 @@ Replace the **_Username/cworkspace/MzDesk/libfuncs/drvConf.c_** file with the ne
 
 **Like This**:    
 
-	Username@Computer> mv .newfs/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c    
+	Username@Computer> mv (Your File system name)/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c    
 
 **After that build the system again**:    
 
