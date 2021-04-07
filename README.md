@@ -61,12 +61,12 @@ Here are the background and forground numbers:
         COLOR_MAGENTA 5    
         COLOR_CYAN    6    
         COLOR_WHITE   7    
-When you're Done setting up your system.    
+When you're done setting up your system.    
 Replace the **_Username/cworkspace/MzDesk/libfuncs/drvConf.c_** file with the new one in your new fs.
 
 **Like This**:    
 
-	Username@Computer> mv (Your File system name)/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c    
+	Username@Computer> mv (Your new file system name)/drvConf.c ~/cworkspace/MzDesk/libfuncs/drvConf.c    
 
 **After that build the system again**:    
 
