@@ -221,7 +221,7 @@ int term(WINDOW *wterm, char *username){
                                 return SYS_SHUTDOWN;
                         }
 		}if(!strcmp(cmd,"edit")||!strcmp(cmd,"EDIT")){
-			st=SYS_RESTART;
+			st=SYS_OK;
 			edit();
 			break;
 		}if(!strcmp(cmd,"touch")||!strcmp(cmd,"TOUCH")){

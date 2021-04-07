@@ -47,5 +47,6 @@ extern char* login();
 
 #define SYS_SHUTDOWN 12
 #define SYS_RESTART 11
+#define SYS_OK 0
 
 #endif

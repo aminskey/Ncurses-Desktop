@@ -1,11 +1,9 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<ncurses.h>
-#include<unistd.h>
+#include <ncurses.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-#include<acorn.h>
-#include<cmd_acornDOS.h>
+#include <acorn.h>
 
 int edit(MEVENT evnt){
 
@@ -13,83 +11,69 @@ int edit(MEVENT evnt){
 	cbreak();
 
 	int c;
-	char pwd[100];
-	int ln=0;
-	int rst;
+	int x,y;
 
-	char appdata[100];
+	x = y = c = 0;
 
-	drvchck();
-
-	if(chdir(drvc)!=-1){
-
-	}else{
-		bluescreen("Cannot change dir");
-	}
-
-	WINDOW *warn=newwin(20,60,10,50);
-	WINDOW *info=derwin(warn,18,58,1,1);
-	WINDOW *yes=newwin(6,9,getbegy(warn)+7,getbegx(warn)+20);
-	WINDOW *no=newwin(6,9,getbegy(warn)+7,getbegx(warn)+40);
-
+	WINDOW *win = newwin(40, 120, 5, 5);
+	WINDOW *edwin = derwin(win, getmaxy(win), getmaxx(win), 1, 1);
+	WINDOW *con = derwin(win, getmaxy(win)/4 - 1, getmaxx(win) - 2, (getmaxy(win)/4)*3, 1);
 
 	start_color();
-	init_pair(1,COLOR_WHITE,COLOR_RED);
-	init_pair(2,COLOR_WHITE,COLOR_GREEN);
+	init_pair(1, COLOR_WHITE, COLOR_BLUE);
+	init_pair(2, COLOR_BLUE, COLOR_WHITE);
+
+	wpaint(win, 32, 1);
 
 
-	wpaint(warn,32,1);
+//	Graphics for main window (*win)
+	wattron(win, COLOR_PAIR(1));
 
-	wattron(warn,COLOR_PAIR(1));
-	box(warn,0,0);
-	mvwprintw(warn,0,(getmaxx(warn)-strlen("--|  Warning!!  |--"))/2,"-=|  Warning!!  |=-");
-	wrefresh(warn);
+	box(win, 0, 0);
+	mvwprintw(win, 0, (getmaxx(win) - strlen("Project Editor"))/2, "Project Editor");
 
-	sprintf(appdata,"%s/%%AppData%%/edit/warn.txt",drvz);
+	wattroff(win, COLOR_PAIR(1));
+	wrefresh(win);
 
-	wattron(info, COLOR_PAIR(1));
+//	Graphics for console (*con)
+	wattron(con, COLOR_PAIR(1));
 
-	getcwd(pwd,100);
+	box(con, 0, 0);
+	mvwprintw(con, 0, (getmaxx(con) - strlen("Console"))/2, "Console");
 
-	more(info,appdata,ln);
-	mvwprintw(info,4,ln+1,"pwd:%s",pwd);
+	wattroff(con, COLOR_PAIR(1));
+	wrefresh(con);
 
-	int t;
 
-	for(int i=0;i<getmaxy(info);i++){
-		for(int j=0;j<getmaxx(info);j++){
-			t=mvwinch(info,i,j);
-			mvwprintw(info,i,j,"%c",t);
+	keypad(win, true);
+	wmove(win, y=1, x=1);
+
+	while(1){
+		curs_set(1);
+
+		c = wgetch(win);
+
+		wattron(win, COLOR_PAIR(1));
+
+		if(c == KEY_UP){
+			y--;
+		}else if(c == KEY_DOWN){
+			y++;
+		}else if(c == KEY_LEFT){
+			x--;
+		}else if(c == KEY_RIGHT){
+			x++;
+		}else if(c == KEY_ENTER){
+			y++;
+			x=0;
+		}else{
+			mvwaddch(win, y, x++, c);
 		}
+		wattroff(win, COLOR_PAIR(1));
+		wrefresh(win);
+
 	}
 
-	wattroff(info, COLOR_PAIR(1));
-	wrefresh(info);
-
-	while(c != KEY_F(1)){
-		if(c == 'Y' || c == 'y'){
-			system("Edit");
-			rst=SYS_RESTART;
-			break;
-		}
-		if(c == 'n' || c == 'N'){
-			rst=0;
-			break;
-		}
-		c=getch();
-	}
-
-
-	wattroff(warn,COLOR_PAIR(1));
-
-	wrefresh(warn);
-
-	wpaint(warn,32,0);
-	wrefresh(warn);
-	delwin(warn);
-
-	echo();
 	curs_set(0);
-
-	return rst;
+	return 0;
 }

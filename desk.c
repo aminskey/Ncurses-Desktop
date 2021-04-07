@@ -161,13 +161,15 @@ int main(void){
 	sleep(2);
 
 	pid_t proc;
-/*
-	if((proc=fork())==-1)
+
+/*	if((proc=fork())==-1)
 		bluescreen("Forking process not working");
 */
 	while(1){
-
-//		if(proc==0){
+/*
+		if(proc != 0)
+			waitpid(proc, NULL, 0);
+*/
 		clear();
 		paint(ch,col);
 		refresh();
@@ -440,22 +442,23 @@ int main(void){
 		sprintf(secin," ");
 
 //		}
-		wait(NULL);
-//		}else{
+
+//		if(proc == 0){
 		time(&lctime);
-                loctime=localtime(&lctime);
+	        loctime=localtime(&lctime);
 
 
-        	wattron(menu,COLOR_PAIR(4));
-//        	mvwprintw(menu,1,1,"start");
+		wattron(menu,COLOR_PAIR(4));
 	        mvwprintw(menu,1,20,"%d:%d.%d",loctime->tm_hour, loctime->tm_min,loctime->tm_sec);
-                wattroff(menu,COLOR_PAIR(4));
+	        wattroff(menu,COLOR_PAIR(4));
 		delay_output(100);
 		wrefresh(menu);
 //		}
+
 	}
         endwin();
         return 0;
 
 }
+
 
