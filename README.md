@@ -51,7 +51,7 @@ After that restart your terminal
 
 	Username@Computer> setup    
 
-**Don't Worry!** _The setup command has consideration of the type of OS you're running    
+**Don't Worry!** _The setup command considers the type of OS you're running    
 Sad thing is that it only works for Mac and Linux_    
     
 You'll have to answer a few questions.   
